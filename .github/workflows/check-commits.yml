@@ -11,6 +11,7 @@ permissions: {}
 jobs:
   # See .github/workflows/CheckBadMerge.groovy for explanation
   check_bad_merge:
+    needs: [check_wrapper]
     if: github.event.pull_request.base.ref == 'master'
     permissions:
       contents: read
